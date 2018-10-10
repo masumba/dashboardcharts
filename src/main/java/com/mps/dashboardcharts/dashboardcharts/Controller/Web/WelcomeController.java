@@ -60,4 +60,10 @@ public class WelcomeController {
         ModelAndView showPage = new ModelAndView("daz_finance");
         return showPage;
     }
+
+    @RequestMapping("test")
+    public ModelAndView showTestPage(){
+        ModelAndView showPage = new ModelAndView("test");
+        return showPage;
+    }
 }
