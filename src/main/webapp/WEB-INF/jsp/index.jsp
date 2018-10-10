@@ -23,8 +23,8 @@
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li role="presentation"><a href="DAZ.html">DAZ</a></li>
-                    <li role="presentation"><a href="CFU.html">CFU</a></li>
+                    <li role="presentation"><a href="http://localhost:8080/">CFU</a></li>
+                    <li role="presentation"><a href="http://localhost:8080/daz">DAZ</a></li>
                 </ul>
         </div>
         </div>
@@ -121,7 +121,7 @@
         setInterval(function(){
             load_transaction_charts();
             load_finance_charts();
-            /*load_agrodealer_charts();*/
+            load_agrodealer_charts();
             load_farmer_charts();
         }, 300000);
     </script>

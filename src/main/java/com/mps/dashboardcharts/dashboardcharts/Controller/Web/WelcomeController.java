@@ -36,4 +36,28 @@ public class WelcomeController {
         ModelAndView showPage = new ModelAndView("transaction");
         return showPage;
     }
+
+    @RequestMapping("/daz")
+    public ModelAndView showDazCharts(){
+        ModelAndView showPage = new ModelAndView("daz_home");
+        return showPage;
+    }
+
+    @RequestMapping("mcc")
+    public ModelAndView showMccCharts(){
+        ModelAndView showPage = new ModelAndView("mcc");
+        return showPage;
+    }
+
+    @RequestMapping("mp")
+    public ModelAndView showMpCharts(){
+        ModelAndView showPage = new ModelAndView("mp");
+        return showPage;
+    }
+
+    @RequestMapping("daz_finance")
+    public ModelAndView showDazFinanceCharts(){
+        ModelAndView showPage = new ModelAndView("daz_finance");
+        return showPage;
+    }
 }
