@@ -4,7 +4,7 @@
 $(document).ready(function(){
 	var dataPoints = [];
 
-	var chart = new CanvasJS.Chart("chartContainer2", {animationEnabled: true,title:{text: "Milk Sales - Mutaba"},
+	var chart = new CanvasJS.Chart("chartContainer2", {animationEnabled: true,title:{text: "Milk Sales"},
 	    axisX:{valueFormatString: "DD MMM",crosshair: {enabled: true,snapToDataPoint: true}},
 	    axisY: {title: "Milk Volumes Sold in ZMW",includeZero: false,valueFormatString: "ZMW ##0.00",crosshair: {enabled: true,snapToDataPoint: true,labelFormatter: function(e) {return "ZMW " + CanvasJS.formatNumber(e.value, "##0.00");}}
 	    },

@@ -4,9 +4,9 @@
 $(document).ready(function(){
 	var dataPoints = [];
 
-	var chart = new CanvasJS.Chart("chartContainer1", {animationEnabled: true,title:{text: "Grade A Milk Collection - Mutaba"},
+	var chart = new CanvasJS.Chart("chartContainer1", {animationEnabled: true,title:{text: "Grade A Milk Collection"},
 	    axisX:{valueFormatString: "DD MMM",crosshair: {enabled: true,snapToDataPoint: true}},
-	    axisY: {title: "Milk Volumes in Litres",includeZero: false,valueFormatString: "##0.00 Litres",crosshair: {enabled: true,snapToDataPoint: true,labelFormatter: function(e) {return "Litres" + CanvasJS.formatNumber(e.value, "##0.00");}}
+	    axisY: {title: "Milk Volumes in Litres",includeZero: false,valueFormatString: "##0.00 Litres",crosshair: {enabled: true,snapToDataPoint: true,labelFormatter: function(e) {return "Litres " + CanvasJS.formatNumber(e.value, "##0.00");}}
 	    },
 	    data: [{type: "area",xValueFormatString: "DD MMM",yValueFormatString: "##0.00 Litres",dataPoints: dataPoints}]
 	});
