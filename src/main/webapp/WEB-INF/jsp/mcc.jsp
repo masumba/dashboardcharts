@@ -2,17 +2,30 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+	var dataPoints = [];
+
 	var chart = new CanvasJS.Chart("chartContainer1", {animationEnabled: true,title:{text: "Grade A Milk Collection - Mutaba"},
 	    axisX:{valueFormatString: "DD MMM",crosshair: {enabled: true,snapToDataPoint: true}},
-	    axisY: {title: "Milk Volumes in Litres",includeZero: false,valueFormatString: "$##0.00",crosshair: {enabled: true,snapToDataPoint: true,labelFormatter: function(e) {return "$" + CanvasJS.formatNumber(e.value, "##0.00");}}
+	    axisY: {title: "Milk Volumes in Litres",includeZero: false,valueFormatString: "##0.00 Litres",crosshair: {enabled: true,snapToDataPoint: true,labelFormatter: function(e) {return "Litres" + CanvasJS.formatNumber(e.value, "##0.00");}}
 	    },
-	    data: [{type: "area",xValueFormatString: "DD MMM",yValueFormatString: "$##0.00",
-	        dataPoints: [
-	            { x: new Date(2016, 01, 01), y: 76.727997 },{ x: new Date(2016, 02, 01), y: 75.459999 },{ x: new Date(2016, 03, 01), y: 76.011002 },{ x: new Date(2016, 04, 01), y: 75.751999 },
-	            { x: new Date(2016, 05, 01), y: 77.500000 },{ x: new Date(2016, 06, 01), y: 77.436996 },{ x: new Date(2016, 07, 01), y: 79.650002 },{ x: new Date(2016, 08, 01), y: 79.750999 },{ x: new Date(2016, 09, 01), y: 80.169998 },{ x: new Date(2016, 10, 01), y: 79.570000 },{ x: new Date(2016, 11, 01), y: 80.699997 },{ x: new Date(2016, 12, 01), y: 79.686996 }
-	        ]
-	    }]
+	    data: [{type: "area",xValueFormatString: "DD MMM",yValueFormatString: "##0.00 Litres",dataPoints: dataPoints}]
 	});
 	chart.render();
+
+
+	function addData(data){
+        for (var i=0;i<data.length;i++){
+
+            dataPoints.push({
+                x: new Date(data[i].month),
+                y: data[i].ltrCol
+            });
+        }
+
+        chart.render();
+    }
+
+	$.getJSON("http://localhost:8080/api/mccCountry/all",addData);
+
 });
 </script>
