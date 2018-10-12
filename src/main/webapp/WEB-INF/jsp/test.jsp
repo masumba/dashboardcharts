@@ -13,13 +13,14 @@
             /*Country*/
             var dataPoints = [];
             var chart = new CanvasJS.Chart("chartContainerToday", {
-                animationEnabled: true,theme: "light2",title:{text: "Todays Milk Collections"},axisY: {title: "Milk Collected in Litres"},
+                animationEnabled: true,theme: "light2",title:{text: "Todays Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                 data: [{ type: "column", legendText: "Litres Collected",yValueFormatString: "#,##0.## Litres",click: onClickMcc,
-                    dataPoints: dataPoints
+                    showInLegend: true, legendMarkerColor: "grey",legendText: "Refresh",dataPoints: dataPoints
                 }]
             });
             chart.render();
 
+            function goBackStart(e) {loadTodaysData();}
             function addData(data){
 
                 for (var i=0;i<data.length;i++){
@@ -44,13 +45,14 @@
                 var chart = new CanvasJS.Chart("chartContainerToday", {
                     animationEnabled: true,exportEnabled: true,theme: "light2",
                     title:{text: "Todays MCC Milk Collections"},
-                    axisY: {title: "Milk Collected in Litres"},
+                    axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                     data: [{type: "column",name: "Milk Collected",yValueFormatString: "#,##0.## Litres",click: onClickFarmers,
-                        dataPoints: dataPoints
+                        showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                     }]
                 });
                 chart.render();
 
+                function goBackStart(e) {loadTodaysData();}
                 function addData(data){
 
                     for (var i=0;i<data.length;i++){
@@ -80,11 +82,12 @@
                         },
                         toolTip: {shared: true,content: toolTipContent},
                         data: [{type: "stackedColumn",showInLegend: true,name: "Milk Delivered",
-                            dataPoints: dataPoints
+                            showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                             }]
                     });
                     chart.render();
 
+                    function goBackStart(e) {loadTodaysData();}
                     function addData(data){
 
                         for (var i=0;i<data.length;i++){
@@ -134,13 +137,14 @@
             /*Country*/
             var dataPoints = [];
             var chart = new CanvasJS.Chart("chartContainerWeek", {
-                animationEnabled: true,theme: "light2",title:{text: "This Weeks Milk Collections"},axisY: {title: "Milk Collected in Litres"},
+                animationEnabled: true,theme: "light2",title:{text: "This Weeks Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                 data: [{ type: "column", legendText: "Litres Collected",yValueFormatString: "#,##0.## Litres",click: onClickWeekMcc,
-                    dataPoints: dataPoints
+                    showInLegend: true, legendMarkerColor: "grey",legendText: "Refresh",dataPoints: dataPoints
                 }]
             });
             chart.render();
 
+            function goBackStart(e) {loadWeeksData();}
             function addData(data){
 
                 for (var i=0;i<data.length;i++){
@@ -164,13 +168,14 @@
             function WeeksMccs(){
                 var dataPoints = [];
                 var chart = new CanvasJS.Chart("chartContainerWeek", {
-                    animationEnabled: true,exportEnabled: true,theme: "light2",title:{text: "This Weeks MCC Milk Collections"},axisY: {title: "Milk Collected in Litres"},
+                    animationEnabled: true,exportEnabled: true,theme: "light2",title:{text: "This Weeks MCC Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                     data: [{type: "column",name: "Milk Collected",yValueFormatString: "#,##0.## Litres",click: onClickWeekFarmers,
-                        dataPoints: dataPoints
+                        showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                     }]
                 });
                 chart.render();
 
+                function goBackStart(e) {loadWeeksData();}
                 function addData(data){
 
                     for (var i=0;i<data.length;i++){
@@ -197,11 +202,12 @@
                         },
                         toolTip: {shared: true,content: toolTipContent},
                         data: [{type: "stackedColumn",showInLegend: true,name: "Milk Delivered",
-                            dataPoints: dataPoints
+                            showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                             }]
                     });
                     chart.render();
 
+                    function goBackStart(e) {loadWeeksData();}
                     function addData(data){
 
                         for (var i=0;i<data.length;i++){
@@ -249,14 +255,15 @@
             /*Country*/
             var dataPoints = [];
             var chart = new CanvasJS.Chart("chartContainerMonth", {
-                animationEnabled: true,theme: "light2",title:{text: "This Months Milk Collections"},axisY: {title: "Milk Collected in Litres"},
+                animationEnabled: true,theme: "light2",title:{text: "This Months Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                 data: [{ type: "column", legendText: "Litres Collected",yValueFormatString: "#,##0.## Litres",click: onClickMonthMcc,
                     //dataPoints: [{ y: 300878, label: "Zambia" }]
-                    dataPoints: dataPoints
+                    showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                 }]
             });
             chart.render();
 
+            function goBackStart(e) {loadMonthsData();}
             function addData(data){
 
                 for (var i=0;i<data.length;i++){
@@ -280,13 +287,14 @@
             function MonthsMccs(){
                 var dataPoints = [];
                 var chart = new CanvasJS.Chart("chartContainerMonth", {
-                    animationEnabled: true,exportEnabled: true,theme: "light2",title:{text: "This Months MCC Milk Collections"},axisY: {title: "Milk Collected in Litres"},
+                    animationEnabled: true,exportEnabled: true,theme: "light2",title:{text: "This Months MCC Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                     data: [{type: "column",name: "Milk Collected",yValueFormatString: "#,##0.## Litres",click: onClickMonthFarmers,
-                        dataPoints: dataPoints
+                        showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                     }]
                 });
                 chart.render();
 
+                function goBackStart(e) {loadMonthsData();}
                 function addData(data){
 
                     for (var i=0;i<data.length;i++){
@@ -313,11 +321,12 @@
                         },
                         toolTip: {shared: true,content: toolTipContent},
                         data: [{type: "stackedColumn",showInLegend: true,name: "Milk Delivered",
-                            dataPoints: dataPoints
+                            showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                             }]
                     });
                     chart.render();
 
+                    function goBackStart(e) {loadMonthsData();}
                     function addData(data){
 
                         for (var i=0;i<data.length;i++){
