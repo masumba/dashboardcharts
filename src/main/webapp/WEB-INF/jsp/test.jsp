@@ -257,7 +257,7 @@
             var chart = new CanvasJS.Chart("chartContainerMonth", {
                 animationEnabled: true,theme: "light2",title:{text: "This Months Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                 data: [{ type: "column", legendText: "Litres Collected",yValueFormatString: "#,##0.## Litres",click: onClickMonthMcc,
-                    //dataPoints: [{ y: 300878, label: "Zambia" }]
+
                     showInLegend: true, legendMarkerColor: "grey",legendText: "Refresh",dataPoints: dataPoints
                 }]
             });
