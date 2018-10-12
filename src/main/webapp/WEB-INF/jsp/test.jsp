@@ -80,7 +80,7 @@
                         title:{text: data+" Farmer Milk Deposits Today", fontFamily: "arial black"},
                         axisY:{valueFormatString:"#0 Ltr",gridColor: "#B6B1A8",tickColor: "#B6B1A8"
                         },
-                        toolTip: {shared: true,content: toolTipContent},
+                        toolTip: {shared: true,content: toolTipContent},legend:{cursor: "pointer", itemclick: goBackStart},
                         data: [{type: "stackedColumn",showInLegend: true,name: "Milk Delivered",
                             showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                             }]
@@ -200,7 +200,7 @@
                     var chart = new CanvasJS.Chart("chartContainerWeek", {animationEnabled: true,title:{text: data+" Farmer Milk Deposits This Week", fontFamily: "arial black"},
                         axisY:{valueFormatString:"#0 Ltr",gridColor: "#B6B1A8",tickColor: "#B6B1A8"
                         },
-                        toolTip: {shared: true,content: toolTipContent},
+                        toolTip: {shared: true,content: toolTipContent},legend:{cursor: "pointer", itemclick: goBackStart},
                         data: [{type: "stackedColumn",showInLegend: true,name: "Milk Delivered",
                             showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                             }]
@@ -258,7 +258,7 @@
                 animationEnabled: true,theme: "light2",title:{text: "This Months Milk Collections"},axisY: {title: "Milk Collected in Litres"},legend:{cursor: "pointer", itemclick: goBackStart},
                 data: [{ type: "column", legendText: "Litres Collected",yValueFormatString: "#,##0.## Litres",click: onClickMonthMcc,
                     //dataPoints: [{ y: 300878, label: "Zambia" }]
-                    showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
+                    showInLegend: true, legendMarkerColor: "grey",legendText: "Refresh",dataPoints: dataPoints
                 }]
             });
             chart.render();
@@ -319,7 +319,7 @@
                     var chart = new CanvasJS.Chart("chartContainerMonth", {animationEnabled: true,title:{text: data+" Farmer Milk Deposits This Month", fontFamily: "arial black"},
                         axisY:{valueFormatString:"#0 Ltr",gridColor: "#B6B1A8",tickColor: "#B6B1A8"
                         },
-                        toolTip: {shared: true,content: toolTipContent},
+                        toolTip: {shared: true,content: toolTipContent},legend:{cursor: "pointer", itemclick: goBackStart},
                         data: [{type: "stackedColumn",showInLegend: true,name: "Milk Delivered",
                             showInLegend: true, legendMarkerColor: "grey",legendText: "Back to start",dataPoints: dataPoints
                             }]
